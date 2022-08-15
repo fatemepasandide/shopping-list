@@ -202,12 +202,13 @@ async def list_order(user : user_pydantic = Depends(get_current_user)):
     order_id_list = []
     product_order = []
 
+    # make a list from product and orders
     for prdc in order_list:
         prdc_id = prdc.product_id
         _ = await Product.filter(id=prdc_id)
         product_list.append(_)
         order_id_list.append(prdc.id)
-
+    # merge two lists
     for idx,prd in enumerate(product_list):
         product_order.append([order_id_list[idx],prd])
  
@@ -230,6 +231,7 @@ async def delete_order(id: int,
     Enter order Id to delete.
     '''
     order_list = await Order.filter(user_id=user.id)
+    # find order by id
     for idx in range(len(order_list)): 
         if order_list[idx].id == id :
             deleted_order = await Order.filter(id=id).delete()
