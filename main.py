@@ -189,27 +189,36 @@ async def create_order(product_id : int,
             "data" : order
         }
 
-
+import json
 @app.get("/order-list")
 async def list_order(user : user_pydantic = Depends(get_current_user)):
     '''
     List of your orders.
     ''' 
     order_list = await Order.filter(user_id=user.id)
+
     product_list = []
+    order_id_list = []
+    product_order = []
+
     for prdc in order_list:
         prdc_id = prdc.product_id
         _ = await Product.filter(id=prdc_id)
         product_list.append(_)
+        order_id_list.append(prdc.id)
 
+    for idx,prd in enumerate(product_list):
+        product_order.append([order_id_list[idx],prd])
+ 
     if not bool(product_list):
         raise HTTPException(status_code=404, detail="You have not any Item")
     else:
         return {
             "status" : "ok",
-            "data" : product_list
+            "data" : product_order 
+
+             }
         
-            }
 
 
 @app.delete("/order-delete/{id}") 
