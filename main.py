@@ -194,6 +194,7 @@ import json
 async def list_order(user : user_pydantic = Depends(get_current_user)):
     '''
     List of your orders.
+    first number is order ID.
     ''' 
     order_list = await Order.filter(user_id=user.id)
 
