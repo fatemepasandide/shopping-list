@@ -15,6 +15,6 @@
 3.run project
 ```sh
     uvicorn main:app --reload
-    ```
+ 
 
 
