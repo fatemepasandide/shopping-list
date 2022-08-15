@@ -1,8 +1,8 @@
 # Shopping card with FastAPI
 
 ### Built With
-[![Python](https://img.shields.io/badge/-Python-25383e?style=flat&logo=python)]\
-[![FastAPI](https://img.shields.io/badge/-FastAPI-25383e?style=flat&logo=fastapi&logoColor=092E20)](https://fastapi.tiangolo.com/)\
+[![Python](https://img.shields.io/badge/-Python-25383e?style=flat&logo=python)](https://www.python.org/)\
+[![FastAPI](https://img.shields.io/badge/-FastAPI-25383e?style=flat&logo=fastapi&logoColor=092E20)](https://fastapi.tiangolo.com/)
 
 ### Prerequisites
 <a href="https://www.python.org/downloads/">Install Python</a>
@@ -15,5 +15,5 @@
 3.run project
 ```sh
     uvicorn main:app --reload
-    ```
+
 
