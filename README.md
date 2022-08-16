@@ -12,7 +12,7 @@
 ```sh
     pip install -r requirements.txt
    ```
-3. Run project
+3. Run the project
  
  ```sh
      uvicorn main:app --reload
