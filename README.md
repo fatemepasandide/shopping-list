@@ -12,9 +12,10 @@
 ```sh
     pip install -r requirements.txt
    ```
-3.run project
-```sh
-    uvicorn main:app --reload
+3. Run project
  
+ ```sh
+     uvicorn main:app --reload
+   ```
 
-
+4. Now go to http://127.0.0.1:8000/docs
